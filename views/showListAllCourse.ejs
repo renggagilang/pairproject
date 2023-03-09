@@ -29,7 +29,11 @@
                                         <td><%= el.Category.title %></td>
                                         <td>
                                           <button> <a href="">See Details</a></button>
+                                          <form action="/course/<%= el.id %>/delete" method="POST">
+                                            <button type="submit" class="btn btn-danger">Delete</button>
+                                          </form>
                                         </td>
+                                        
                                     </tr>
                                 <% }) %>
                             </tbody>

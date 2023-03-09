@@ -31,15 +31,15 @@ app.post("/login",RegisterController.postFormLogin)
 app.get("/logout",RegisterController.getLogout)
 
 // midleware
-app.use((req, res, next) => {
-  if(!req.session.userId){
-    // console.log(req.session.userId)
-    res.redirect('/login?error=Please login first')
-  }else{
-    next()
-  }
+// app.use((req, res, next) => {
+//   if(!req.session.userId){
+//     // console.log(req.session.userId)
+//     res.redirect('/login?error=Please login first')
+//   }else{
+//     next()
+//   }
  
-})
+// })
 
 app.use(routes)
 
