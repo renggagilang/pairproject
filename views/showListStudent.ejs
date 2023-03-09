@@ -25,7 +25,7 @@
                                         <td><%= el.email %></td>
                                         <td><%= el.role %></td>
                                         <td>
-                                          <button> <a href="">See Details</a></button>
+                                          <button name="UserId" value="<%= el.id %>"><a href="/user/<%= el.id %>/detail">See Details</a></button>
                                         </td>
                                     </tr>
                                 <% }) %>
