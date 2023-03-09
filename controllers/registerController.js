@@ -4,7 +4,8 @@ const bcrypt = require('bcryptjs');
 class RegisterController{
 
   static getFormRegister(req,res){
-    res.render('formRegister')
+    const {error} = req.query
+    res.render('formRegister',{error})
   }
 
   static postFormRegister(req,res){
@@ -16,11 +17,15 @@ class RegisterController{
       res.redirect(`/login`)
       // res.send(data)
     })
-    .catch(err=> res.send(err));
+    .catch(err=>{
+      let error = err.errors.map(el=>el.message)
+      res.redirect(`/register?error=${error}`)
+    } );
   }
 
   static getFormLogin(req,res){
-    res.render('formLogin')
+    const {error} = req.query
+    res.render('formLogin',{error})
   }
 
   static postFormLogin(req,res){
@@ -32,7 +37,8 @@ class RegisterController{
       if(user) {
         const invalidPassword = bcrypt.compareSync(password, user.password);
         if(invalidPassword){
-          return res.send("berhasil login")
+          req.session.userId = user.id
+          return res.redirect('/')
         }else{
           return res.send("Password Salah")
         }
@@ -41,8 +47,14 @@ class RegisterController{
       }
      
     })
-    .catch(err=> res.send(err));
+    .catch(err=> res.send(err.errors[0].message));
   }
 
+  static getLogout(req,res){
+    req.session.destroy(function(err) {
+      if(err) res.send(err)
+      else{res.redirect('login')}
+    })
+  }
 }
 module.exports = RegisterController

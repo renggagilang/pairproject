@@ -13,17 +13,17 @@
                             <thead>
                                 <tr>
                                     <th>Name</th>
-                                    <th>Duration</th>
-                                    <th>Category</th>
-                                    <th>Details Course</th>
+                                    <th>Email</th>
+                                    <th>Course</th>
+                                    <th>Details student</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <% data.Courses.forEach(el => { %>
+                                <% data.forEach(el => { %>
                                     <tr>
-                                        <td><%= el.title %></td>
-                                        <td><%= el.duration %></td>
-                                        <td><%= data.title %></td>
+                                        <td><%= el.username %></td>
+                                        <td><%= el.email %></td>
+                                        <td><%= el.role %></td>
                                         <td>
                                           <button> <a href="">See Details</a></button>
                                         </td>

@@ -1,0 +1,37 @@
+<%- include('partials/head.ejs', {title: 'Home'}) %>
+<body>
+  <%- include('partials/navbar.ejs') %>
+  <%- include('partials/pageHeader.ejs', {pageTitle: 'Add New Course'}) %>
+
+    <div class="container">
+        <div class="card">
+            <div class="card-body">
+                <form action="/course/add" method="POST">
+
+                    <br><hr><label for="title">title</label><br>
+                      <input class="form-control form-control-lg" type="text" name="title" placeholder="e.g: Doe">
+                  
+                    <br><hr><label for="duration">Duration</label><br>
+                       <input class="form-control form-control-lg" type="text" name="duration" placeholder="e.g: 1972">
+
+                    <br><hr><label for="description">Description</label><br>
+                      <textarea class="form-control" id="textAreaExample2" rows="8" name="description"></textarea>
+             
+               
+
+                      <br><hr><label for="CategoryId">Category</label><br>
+                       <select name="CategoryId" class="form-control form-control-lg">
+                        <option value="1">Matematika</option>
+                        <option value="2">Sains</option>
+                        <option value="3">Bahasa</option>
+                        <option value="4">Musik</option>
+                       </select>
+
+
+                    <br><br><input type="submit" class="btn btn-success" value="Save" style="color: black;"> <button type="button" class="btn btn-danger"><a href="/course" style="color: white"><b>Cancel</b></a></button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br><br><br><br><br>
+</body>
