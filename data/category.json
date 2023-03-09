@@ -1,22 +1,19 @@
 [
   {
-      "name_prodHouse": "Walt Disney Studios",
-      "headquarters": "Burbank, California, United States"
+      "title": "Matematika"
+      
   },
   {
-      "name_prodHouse": "Pixar",
-      "headquarters": "Emeryville, California, United States"
+      "title": "Sains"
+      
   },
   {
-      "name_prodHouse": "Warner Bros",
-      "headquarters": "Los Angeles, California, United States"
+      "title": "Bahasa"
+      
   },
   {
-      "name_prodHouse": "Universal Pictures",
-      "headquarters": "Universal City, California, United States"
-  },
-  {
-      "name_prodHouse": "Paramount Pictures",
-      "headquarters": "Los Angeles, California, United States"
+      "title": "Musik"
+      
   }
+  
 ]

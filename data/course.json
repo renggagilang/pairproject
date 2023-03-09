@@ -1,0 +1,33 @@
+[
+  {
+      "title": "Pengantar Statistika",
+      "duration": 5,
+      "CategoryId": 1 ,
+      "description": "Pelajar akan dapat menjelaskan definisi statistik dan hubungannya dengan probabilitas /n Pelajar akan memahami pengukuran tendensi sentral dan variasi /n Pelajar akan memiliki pengetahuan dasar tentang harapan dan variasi variabel acak dan distribusi Norma."
+      
+  },
+
+  {
+      "title": "Fisika Kuantum",
+      "duration": 7,
+      "CategoryId": 2 ,
+      "description": "Memahami sejarah serta peristiwa yang menjadi tonggak berdirinya Fisika Kuantum /n Mengetahui berbagai fenomena fundamental perilaku partikel di dunia kuantum /n Memahami mengapa Fisika Kuantum adalah bidang yang tak terelakkan untuk dibahas jika ingin menguasai teknologi masa."
+      
+  },
+  {
+      "title": "Bahasa Inggris",
+      "duration": 5,
+      "CategoryId": 3 ,
+      "description": "Pada level 1 anda akan belajar dasar bahasa Inggris. Mengetahui dan memahami Alphabet (Abjad bahasa Inggris)."
+      
+  },
+  {
+      "title": "How To Sing",
+      "duration": 5,
+      "CategoryId": 4 ,
+      "description": "Perform vocal warm ups with easy exercises you can do at home /n Increase vocal range without force or pressure whilst improving strength and tone."
+      
+  }
+  
+  
+]
