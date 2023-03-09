@@ -1,16 +1,35 @@
 const { Course ,Category} = require('../models')
+const {Op} = require('sequelize')
 
 class CourseController {
   static showAllCourse(req, res) {
+    const { q } = req.query
+
+    const where = q ? { title: { [Op.like]: `%${q}%` } } : {};
+
     Course.findAll({
       include:{
         model: Category,
       },
+      where,
       order: [['CategoryId', 'ASC']],
     })
     .then(data => res.render('showListAllCourse', {data}))
     .catch(err => res.render(err))
   }
+
+  static deleteCourse(req, res) {
+    const id = parseInt(req.params.id);
+
+    Course.destroy({
+      where: { id },
+    })
+      .then(() => res.redirect('/course'))
+      .catch((err) => res.send(err))
+}
+
+  
+  
   static addFormCourse(req, res) {
     res.render('addFormCourse')
   }
