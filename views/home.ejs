@@ -1,0 +1,36 @@
+<%- include('partials/head.ejs', {title: 'Home'}) %>
+<body>
+    <%- include('partials/navbar.ejs') %>
+
+    <%- include('partials/pageHeader.ejs', {pageTitle: 'Belajar Atracktif Entertaint'}) %>
+
+    <div class="container" id="movieList">
+        <div class="card-deck">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="/img/background.jpg" alt="Course">
+                <div class="card-body">
+                  <h5 class="card-title">Category</h5>
+                  <p class="card-text">View our current list of Category Course.</p>
+                  <br><a href="/category" class="btn btn-success" style="color: black">Show Category list</a>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="/img/background.jpg" alt="Course">
+                <div class="card-body">
+                    <h5 class="card-title">Course</h5>
+                    <p class="card-text">View our current list of registered Course.</p>
+                    <br><a href="/course" class="btn btn-success" style="color: black">Show Course list</a>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="/img/background.jpg" alt="Course">
+                <div class="card-body">
+                    <h5 class="card-title">Students</h5>
+                    <p class="card-text">View list of Students of the Course.</p>
+                    <br><a href="/user" class="btn btn-success" style="color: black">Show Students list</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
