@@ -1,7 +1,7 @@
 const { Category,Course,UserCourse } = require('../models')
 
 class CategoryController {
-    static showAllCategory(req, res) {
+    static addCourse(req, res) {
       const{id} = req.params
       const{UserId} = req.body
         Course.create({order: [['title', 'ASC']]})

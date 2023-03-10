@@ -9,4 +9,6 @@ router.use('/category', categoryRouter)
 router.use('/course', courseRouter)
 router.use('/user', userRouter)
 
+router.get('/userCourse/add')
+
 module.exports = router
