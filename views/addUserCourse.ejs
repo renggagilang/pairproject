@@ -1,0 +1,28 @@
+<%- include('partials/head.ejs', {title: 'Home'}) %>
+<body>
+  <%- include('partials/navbar.ejs') %>
+  <%- include('partials/pageHeader.ejs', {pageTitle: 'Add New Course'}) %>
+
+    <div class="container">
+        <div class="card">
+            <div class="card-body">
+                <form action="/userCourse/<%= id %>/add" method="POST">
+
+                    <label for="role">role</label><br>
+                    <input name="role" class="form-control form-control-lg" type="text"><br>
+                      <br><hr><label for="UserId">Category</label><br>
+                       <select name="UserId" class="form-control form-control-lg">
+                       <% data.forEach(el=>{ %>
+                        <option value="<%= el.id  %>"><%= el.username  %></option>
+                        
+                     <% }) %>
+                       </select>
+
+
+                    <br><br><input type="submit" class="btn btn-success" value="Save" style="color: black;"> <button type="button" class="btn btn-danger"><a href="/course" style="color: white"><b>Cancel</b></a></button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br><br><br><br><br>
+</body>

@@ -2,6 +2,7 @@ const { Course ,Category} = require('../models')
 const formatedDay = require("../helper/formtedDay")
 const {Op} = require('sequelize')
 
+
 class CourseController {
   static showAllCourse(req, res) {
     const { q } = req.query
