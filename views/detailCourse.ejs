@@ -1,0 +1,36 @@
+
+<%- include('partials/head.ejs', {title: 'Home'}) %>
+<body>
+  <%- include('partials/navbar.ejs') %>
+  
+
+
+<div style="margin: 30px;">
+  <div>
+   
+    <div class="w3-container w3-cell ">
+      <ul style=" text-decoration: none; ">
+        <h2 style="text-align: center;"><%= data.title %></h2> <br><br><br>
+        <li>Duration : <%= formatedDay(data.duration)  %></li>
+        <li>Category : <%=  data.Category.title %></li>
+        <li>Released Year : <%= data.formatedDate %></li>
+       
+        
+      </ul>
+    </div>
+  </div>
+  <div>
+    <p>DesCription:</p>
+    <p style="white-space: pre-wrap;  border-top: 40px; border-color: aqua;"><%= data.description %></p>
+    
+  </div>
+  <form action="">
+    
+    <button type="submit" class="btn btn-primary btn-lg"> <a href="/course/add/" class="btn btn-primary btn-lg"> Add Course</a></button>
+  </form>
+ 
+
+ 
+</body>
+</html>
+</div>

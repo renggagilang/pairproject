@@ -6,7 +6,7 @@
 <div class="container">
   <section >
     
-    <form  style="margin: auto; width: 70%;" action="/user/0/update" method="POST" >
+    <form  style="margin: auto; width: 70%;" action="/user/<%= id %>/add" method="POST" >
       <p style="margin: auto; text-align: center; width: 200px; height: 200px;"> <img style="width: 200px; height: 200px; " src="" alt=""></p>
       <table style="width: 100%;">
         <tr>
@@ -34,7 +34,7 @@
       <input style="width: 100%;" type="text" name="photo"  value="">
       <br><br>
       
-      <button type="submit" name="UserId" value="<%= id.id %>">Submit</button>
+      <button type="submit" name="UserId" value="<%= id %>">Submit</button>
       
     </form>
    

@@ -1,14 +1,20 @@
 const { Course ,Category} = require('../models')
+const formatedDay = require("../helper/formtedDay")
+const {Op} = require('sequelize')
 
 class CourseController {
   static showAllCourse(req, res) {
+    const { q } = req.query
+
+    const where = q ? { title: { [Op.iLike]: `%${q}%` } } : {};
     Course.findAll({
       include:{
         model: Category,
       },
+      where,
       order: [['CategoryId', 'ASC']],
     })
-    .then(data => res.render('showListAllCourse', {data}))
+    .then(data => res.render('showListAllCourse', {data,formatedDay}))
     .catch(err => res.render(err))
   }
   static addFormCourse(req, res) {
@@ -30,6 +36,30 @@ class CourseController {
       res.send(err)
     } );
   }
+
+  static deleteCourse(req, res) {
+    Course.destroy({where: {id: req.params.id}})
+        .then(() => res.redirect('/course'))
+        .catch(err => res.render('errors', {err}))
+}
+
+static detailCourse(req, res) {
+  const {id}= req.params
+  Course.findByPk(id,{
+    include:{
+      model: Category,
+    },
+  
+  })
+  .then(data => res.render('detailCourse', {data,formatedDay}))
+  .catch(err => res.render(err))
+}
+static addFormCourse(req, res) {
+  res.render('addFormCourse')
+}
+
+
+
 }
 
 module.exports = CourseController

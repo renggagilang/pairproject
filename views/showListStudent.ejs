@@ -12,7 +12,7 @@
                             <br>
                             <thead>
                                 <tr>
-                                    <th>Name</th>
+                                    <th>Username</th>
                                     <th>Email</th>
                                     <th>Course</th>
                                     <th>Details student</th>
@@ -23,7 +23,11 @@
                                     <tr>
                                         <td><%= el.username %></td>
                                         <td><%= el.email %></td>
-                                        <td><%= el.role %></td>
+                                        <td> 
+                                         <%   el.Courses.forEach(elx=> { %>
+                                            <%= elx.title  %> ,
+                                      <% }) %>
+                                        </td>
                                         <td>
                                           <button name="UserId" value="<%= el.id %>"><a href="/user/<%= el.id %>/detail">See Details</a></button>
                                         </td>

@@ -10,7 +10,12 @@
                     <div class="container">
                         <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
                             <button type="submit" class="btn btn-primary btn-lg"> <a href="/course/add" class="btn btn-primary btn-lg"> Add New Course</a></button>
-                          </div>
+                          </div> <br><br>
+                          <form style="margin: auto;" action="/course?search=" method="GET">
+                            <input type="search" style="width: 50%;" placeholder="Search by title" name="q">
+                          
+                          <button type="submit">Search</button>
+                          </form>
                         <table class="table table-striped table-borderless table-dark">
                             <br>
                             <thead>
@@ -25,10 +30,11 @@
                                 <% data.forEach(el => { %>
                                     <tr>
                                         <td><%= el.title %></td>
-                                        <td><%= el.duration %></td>
+                                        <td><%= formatedDay(el.duration)  %></td>
                                         <td><%= el.Category.title %></td>
                                         <td>
-                                          <button> <a href="">See Details</a></button>
+                                          <button> <a href="/course/<%= el.id %>/details">See Details</a></button>
+                                          <button> <a href="/course/<%= el.id %>/delete">Delete</a></button>
                                         </td>
                                     </tr>
                                 <% }) %>

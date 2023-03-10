@@ -5,6 +5,11 @@ const {
 module.exports = (sequelize, DataTypes) => {
   class Course extends Model {
     
+    get formatedDate(){
+      return this.createdAt.toLocaleDateString('id-ID',{ weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'})
+    }
+   
+
     static associate(models) {
       // define association here
       Course.belongsTo(models.Category, {foreignKey: 'CategoryId'})

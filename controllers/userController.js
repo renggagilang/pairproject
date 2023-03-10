@@ -2,9 +2,17 @@ const { User, Course ,Category ,UserCourse , Profile} = require('../models')
 
 class UserController {
   static showUser(req, res) {
-    User.findAll({ order: [['username', 'ASC']]})
+    User.findAll({
+      include:{
+        model: Course,
+      },
+       order: [['username', 'ASC']]})
       // res.render('user')
-      .then(data => res.render('showListStudent', {data}))
+      .then(data => {
+        // res.send(data)
+        res.render('showListStudent', {data})
+      }
+      )
       .catch(err => res.send(err))
   }
 
@@ -59,6 +67,19 @@ class UserController {
     
       // res.render('user')
       
+  }
+
+  static addStudent(req, res) {
+    const{id} = req.params
+    const {firstName,lastName,gender,email,phone,photo,UserId}  = req.body 
+    // console.log(req.params)
+    console.log(req.body,"<<CREATE")
+    Profile.create({UserId,firstName,lastName,gender,email,phone,photo})
+    .then(data => {
+      // res.send(data)
+      res.redirect("/user")
+    })
+    .catch(err => res.send(err))
   }
 }
 
